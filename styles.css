@@ -120,7 +120,7 @@ section {
 
 .title {
     padding-top: 100px;
-    align-items: center;
+    text-align: center;
     color: #FFF;
     font-size: 80px;
     text-shadow: 5px 5px 0 black;
@@ -171,4 +171,141 @@ section {
 
 .about-card img {
     padding-bottom: 20px;
+}
+
+.moving-cloud {
+    background:
+        url(./img/cloud.webp);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 230px;
+    transform: rotate(-15deg);
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    animation: move-planet 4s infinite;
+}
+
+.skills-card {
+    background-image: url(./img/form3.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 450px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin: 20px;
+    padding-left: 10px;
+}
+
+.skills-card p {
+    color: #000;
+    font-size: 18px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 500px;
+    font-family: "Comfortaa";
+}
+
+.moving-planet2 {
+    background:
+        url(./img/moving-planet2.webp);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 230px;
+    transform: rotate(-15deg);
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    animation: move-planet 4s infinite;
+}
+
+.work-block img{
+    margin: 0 56.5px;
+    width: 27%;
+    box-shadow: 7px 7px 0 #000;
+}
+
+.comment-block {
+    max-width: 1150px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.comment-card {
+    background-image: url(./img/card.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+}
+
+.comment-card h3 {
+    font-family: "Comfortaa";
+    font-size: 18px;
+    padding: 10px;
+    margin: 0;
+}
+
+.comment-card p {
+    font-family: "Comfortaa";
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.comment {
+    background: url(./img/comment.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 327px;
+    height: 161px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment p {
+    font-family: "Comfortaa";
+    font-size: 20px;
+    max-width: 250px;
+}
+
+
+
+footer {
+    background-color: #200153;
+    height: 110px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFF;
+}
+
+.footer-info p {
+    font-family: "Comfortaa";
+    padding-bottom: 10px;
+}
+
+.footer-year p {
+    font-family: "Comfortaa";
+    letter-spacing: 1.5px;
+}
+
+.footer-links a {
+    margin-right: 15px;
 }
