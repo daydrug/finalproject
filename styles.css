@@ -1,4 +1,12 @@
-section {
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inter:wght@700&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+section{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -6,87 +14,190 @@ section {
     position: relative;
 }
 
-#main {
-    background-image: url(./img/bgMAIN.webp);
+#main{
+    background-image: url(img/bgMAIN.webp);
 }
 
-#about {
-    background-image: url(./img/bgABOUT.png);
-}
+ #about{
+     background-image: url(img/bgABOUT.png);
+ }
+ 
+ #skills{
+     background-image: url(img/bgSKILLS.webp);
+ }
+ 
+ #works{
+     background-image: url(img/bgWORKS.webp);
+ }
+ 
+ #comments{
+     background-image: url(img/bgCOMMENTS.webp);
+ }
 
-#skills {
-    background-image: url(./img/bgSKILLS.webp);
-}
-
-#works {
-    background-image: url(./img/bgWORKS.webp);
-}
-
-#comments {
-    background-image: url(./img/bgCOMMENTS.webp);
-}
-
-.main-block,
-.about-block,
-.skills-block,
-.works-block,
-.comments-block {
+ .main-block, .about-block, .skills-block, .works-block, .comments-block{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 70vh;
-    flex-direction: column;
 }
 
-.main-content {
-    width: 849px;
-    height: 223px;
-    background-image: url(./img/form1.webp);
+.main-block{
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-content{
+    background-image: url(img/form1.webp);
     background-repeat: no-repeat;
     background-size: contain;
+    width: 849px;
+    height: 223px;
     padding-left: 30px;
+    z-index: 2;
 }
 
-.main-title {
-    color: #2b2d35;
-    font-size: 65px;
+.main-title{
     padding-top: 67px;
-    padding-bottom: 0px;
+    color: #2B2D35;
+    font-size: 80px;
 }
 
-.main-subtitle {
-    color: #2b2d35;
+.main-subtitle{
+    color: #2B2D35;
     font-size: 20px;
-    font-family: "Comfortaa";
-    padding-top: 0;
+    font-family: 'Comfortaa';
 }
 
-.button {
+.button{
     width: 200px;
     height: 60px;
     border-radius: 100px;
-    border: 2px solid black;
+    border: 2px solid #000;
     background: #BBFF2C;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 0 #000000;
     margin-top: 20px;
-    box-shadow: 5px 5px 0 black;
     transition-duration: 0.3s;
 }
 
 .button a {
+    color: #000;
     font-size: 20px;
+    font-weight: 700;
     text-decoration: none;
 }
 
-.button:hover {
-    background: #a0d826
+.button:hover{
+    background: #a0d826;
 }
 
-.moving-planet {
-    background:
-        url(./img/moving-planet.webp);
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo{
+    color: #BBFF2C;
+    font-size: 80px;
+    padding-left: 50px;
+    text-shadow: 5px 5px 0 #000000;
+}
+
+.fixed-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding-right: 150px;
+}
+
+.nav-link{
+    width: 112px;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    background-color: #FFF;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Comfortaa';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    transition-duration: 0.3s;
+}
+
+.active, .nav-link:hover{
+    background-color: #BBFF2C;
+    transform: scale(1.2, 1.2);
+}
+
+.mobile-button{
+    display: none;
+    width: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.hide{
+    display: none;
+}
+
+.mobile-menu{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: #200153;
+    min-height: 100vh;
+}
+
+.mobile-nav{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav-links .nav-link{
+    margin-bottom: 30px;
+    width: 210px;
+    height: 50px;
+}
+
+
+.off-scroll{
+    overflow: hidden;
+}
+
+
+
+.planet{
+    background: url(img/planet.webp);
+    background-repeat: no-repeat;
+    width: 405px;
+    height: 330px;
+    transform: rotate(-176deg);
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+}
+
+.moving-planet{
+    background: url(img/moving-planet.webp);
     background-repeat: no-repeat;
     width: 200px;
     height: 230px;
@@ -94,61 +205,51 @@ section {
     position: absolute;
     bottom: 30px;
     left: 30px;
-    animation: move-planet 4s infinite;
-    /* animation-name: move-planet;
+}
+
+@keyframes planet-move {
+	from{transform: translateY(0px);}
+	to {transform: translateY(70px);}
+}
+
+.moving-planet, .moving-cloud, .moving-planet2{
+    animation-name: planet-move;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-direction: alternate; */
+    animation-direction: alternate;
 }
 
-@keyframes move-planet {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-69px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* @keyframes move-planet {
-    from{transform: translateY(0px);}
-    to{transform: translateY(70px);}
-} */
-
-.title {
+.title{
     padding-top: 100px;
     text-align: center;
     color: #FFF;
     font-size: 80px;
-    text-shadow: 5px 5px 0 black;
+    text-shadow: 5px 5px 0 #000000;
 }
 
-.about-content {
+.about-content{
     width: 35%;
     height: 270px;
     border-radius: 0px 0px 0px 20px;
-    padding-left: 40px;
+    background: #792AFF;
+    padding-left: 40px ;
     padding-top: 40px;
-    background-color: #792AFF;
     position: relative;
     display: flex;
 }
 
-.about-title {
+.about-title{
     color: #FFF;
     font-size: 20px;
     max-width: 463px;
     margin-bottom: 20px;
-    font-family: "Comfortaa";
+    font-family: 'Comfortaa';
 }
 
-.about-card {
-    background-image: url(./img/form2.webp);
+.about-card{
+    background-image: url(img/form2.webp);
     background-repeat: no-repeat;
-    width: 376px; 
+    width: 376px;
     height: 346px;
     display: flex;
     flex-direction: column;
@@ -158,40 +259,34 @@ section {
     position: relative;
 }
 
-.about-card p {
+.about-card p{
     color: #000;
     font-size: 17px;
     align-self: start;
     padding-left: 20px;
-    padding-bottom: 0;
     line-height: 25px;
-    font-family: "Comfortaa";
-    margin: 0;
+    font-family: 'Comfortaa';
 }
 
-.about-card img {
+.about-card img{
     padding-bottom: 20px;
 }
 
-.moving-cloud {
-    background:
-        url(./img/cloud.webp);
+.moving-cloud{
+    background: url(img/cloud.webp);
     background-repeat: no-repeat;
-    width: 200px;
-    height: 230px;
-    transform: rotate(-15deg);
+    width: 180px;
+    height: 162px;
     position: absolute;
     bottom: 30px;
     left: 30px;
-    animation: move-planet 4s infinite;
 }
 
-.skills-card {
-    background-image: url(./img/form3.webp);
+.skills-card{
+    background-image: url(img/form3.webp);
     background-repeat: no-repeat;
     background-size: contain;
     height: 450px;
-    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,44 +295,30 @@ section {
     padding-left: 10px;
 }
 
-.skills-card p {
+.skills-card p{
     color: #000;
     font-size: 18px;
     margin-top: 80px;
     margin-bottom: 30px;
     text-align: center;
     max-width: 500px;
-    font-family: "Comfortaa";
+    font-family: 'Comfortaa';
 }
 
-.moving-planet2 {
-    background:
-        url(./img/moving-planet2.webp);
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 230px;
-    transform: rotate(-15deg);
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    animation: move-planet 4s infinite;
-}
+ .works-block img{
+     margin: 0 20px;
+     width: 27%;
+     box-shadow: 7px 7px 0 #000000;
+ }
 
-.work-block img{
-    margin: 0 56.5px;
-    width: 27%;
-    box-shadow: 7px 7px 0 #000;
-}
-
-.comment-block {
-    max-width: 1150px;
-    display: flex;
+ .comments-block{
     justify-content: space-evenly;
+    max-width: 1150px;
     margin: auto;
 }
 
-.comment-card {
-    background-image: url(./img/card.webp);
+.comment-card{
+    background-image: url(img/card.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -249,26 +330,21 @@ section {
     max-width: 200px;
 }
 
-.comment-card h3 {
-    font-family: "Comfortaa";
+.comment-card h3{
     font-size: 18px;
+    font-family: 'Comfortaa';
     padding: 10px;
-    margin: 0;
-}
 
-.comment-card p {
-    font-family: "Comfortaa";
+}
+.comment-card  p{
     font-size: 14px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-family: 'Comfortaa';
+    padding: 10px 20px;
     text-align: center;
-    margin: 0;
 }
 
-.comment {
-    background: url(./img/comment.webp);
+.comment{
+    background-image: url(img/comment.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -278,16 +354,13 @@ section {
     justify-content: center;
     align-items: center;
 }
-
-.comment p {
-    font-family: "Comfortaa";
+.comment p{
     font-size: 20px;
+    font-family: 'Comfortaa';
     max-width: 250px;
 }
 
-
-
-footer {
+footer{
     background-color: #200153;
     height: 110px;
     display: flex;
@@ -296,184 +369,25 @@ footer {
     color: #FFF;
 }
 
-.footer-info p {
-    font-family: "Comfortaa";
+.footer-info p{
+    font-family: 'Comfortaa';
     padding-bottom: 10px;
 }
 
-.footer-year p {
-    font-family: "Comfortaa";
+.footer-year p{
+    font-family: 'Comfortaa';
     letter-spacing: 1.5px;
 }
 
-.footer-links a {
+.footer-links a{
     margin-right: 15px;
 }
 
-nav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-}
-
-.fixed-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    padding-right: 150px;
-}
-
-.nav-link {
-    width: 112px;
-    height: 40px;
-    border-radius: 12px;
-    border: 2px solid #000;
-    background-color: #FFF;
-    text-decoration: none;
-    color: #000;
-    font-size: 20px;
-    font-family: "Comfortaa";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    transition-duration: 0.3s;
-}
-
-.nav-link:hover {
-    background-color: #BBFF2C;
-}
-
-.logo {
-    color: #BBFF2C;
-    font-size: 80px;
-    padding-left: 50px;
-    text-shadow: 5px 5px 0 #006400;
-}
-
-* {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    scroll-behavior: smooth;
-}
-
-.nav-link.active {
-    background-color: #BBFF2C;
-    color: #000;
-}
-
-/* @media (max-width: 1000px) {
-    .nav-links {
-        display: none;
-    }
-
-    .logo {
-        font-size: 40px;
-        padding-left: 20px;
-        padding-top: 10px;
-    }
-    .main-content {
-        max-width: 320px;
-    }
-
-    .main-title {
-        padding-top: 30px;
-        font-size: 30px;
-    }
-    .main-subtitle {
-        font-size: 15px;
-    }
-    .planet, .moving-cloud,
-    .moving-planet2 {
-        display: none;
-    }
-    .title {
-        font-size: 50px;
-        padding-top: 30px;
-    }
-    .about-block {
-        flex-direction: column;
-        margin-top: 20px;
-        padding: 0;
-    }
-    .about-card {
-        order: -1;
-        background-size: contain;
-        padding-top: 20px;
-        width: 326px;
-        height: 296px;
-    }
-    .about-card img {
-        width: 85%;
-    }
-    .about-content {
-        width: 75%;
-        height: 250px;
-        margin-bottom: 20px; 
-    }
-    .about-title {
-        font-size: 18px;
-    }
-    .skills-card {
-        margin: 20px;
-        padding-left: 10px;
-        background-size: contain;
-    }
-    .skills-card p {
-        font-size: 16px;
-        margin-top: 15%;
-        margin-bottom: 20px;
-    }
-    .skills-section {
-        min-height: 60vh;
-    }
-    .skills-card .button {
-        position: absolute;
-        bottom: 100px;
-    }
-    .works-block {
-        flex-direction: column;
-        padding: 20px 0;
-    }
-    .works-block img {
-        margin: 20px 0;
-        width: 80%;
-    }
-    .comments-block {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 0 auto;
-        padding-top: 50px;
-    }
-    .comment {
-        background-image: url(./img/comment-mobile.webp);
-    }
-    .comment p {
-        font-size: 15px;
-        max-width: 290px;
-    }
-    footer {
-        height: 200px;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    .footer-info {
-        text-align: center;
-    }
-} */
-
 @media (max-width: 1000px) {
- 
+    .mobile-button {
+        display: block;
+    } 
+    
     .nav-links {
         display: none;
     }
@@ -481,6 +395,7 @@ nav {
     .logo{
         font-size: 40px;
         padding-left: 20px;
+        padding-top: 10px;
     }
 
     .main-content{
@@ -572,7 +487,7 @@ nav {
     }
 
     .comment{
-        background-image: url(img/comment-mobile.png);
+        background-image: url(img/comment-mobile.webp);
     }
 
     .comment p{
@@ -601,5 +516,9 @@ nav {
     .button a {
         font-size: 15px;
     }
-    
+ 
+}
+
+.btn-hide{ 
+    display: none;
 }
